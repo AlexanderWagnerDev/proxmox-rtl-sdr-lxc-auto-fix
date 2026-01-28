@@ -25,13 +25,11 @@ This bash script automatically:
 
 ## Installation
 
-### 1. Download the Script
+### 1. Download and Install the Script
 
 ```bash
-cd /opt
-git clone https://github.com/AlexanderWagnerDev/proxmox-rtl-sdr-lxc-auto-fix.git
-cd proxmox-rtl-sdr-lxc-auto-fix
-chmod +x rtl-lxc-auto-fix.sh
+wget https://raw.githubusercontent.com/AlexanderWagnerDev/proxmox-rtl-sdr-lxc-auto-fix/main/rtl-lxc-auto-fix.sh -O /usr/local/bin/rtl_auto_fix.sh
+chmod +x /usr/local/bin/rtl_auto_fix.sh
 ```
 
 ### 2. Configure Container ID
@@ -39,7 +37,7 @@ chmod +x rtl-lxc-auto-fix.sh
 Edit the script and set your LXC container ID:
 
 ```bash
-nano rtl-lxc-auto-fix.sh
+nano /usr/local/bin/rtl_auto_fix.sh
 ```
 
 Change line 6:
@@ -57,25 +55,19 @@ crontab -e
 
 Add this line:
 ```bash
-*/5 * * * * /opt/proxmox-rtl-sdr-lxc-auto-fix/rtl-lxc-auto-fix.sh >> /var/log/rtl-lxc-auto-fix.log 2>&1
+*/5 * * * * /usr/local/bin/rtl_auto_fix.sh >> /var/log/rtl-lxc-auto-fix.log 2>&1
 ```
 
 This will:
 - Run the script every 5 minutes
 - Log output to `/var/log/rtl-lxc-auto-fix.log`
 
-Alternative: Run on boot and every hour:
-```bash
-@reboot sleep 60 && /opt/proxmox-rtl-sdr-lxc-auto-fix/rtl-lxc-auto-fix.sh >> /var/log/rtl-lxc-auto-fix.log 2>&1
-0 * * * * /opt/proxmox-rtl-sdr-lxc-auto-fix/rtl-lxc-auto-fix.sh >> /var/log/rtl-lxc-auto-fix.log 2>&1
-```
-
 ### 4. Manual Execution
 
 You can also run the script manually:
 
 ```bash
-/opt/proxmox-rtl-sdr-lxc-auto-fix/rtl-lxc-auto-fix.sh
+/usr/local/bin/rtl_auto_fix.sh
 ```
 
 ## Requirements
@@ -181,13 +173,11 @@ Dieses Bash-Script führt automatisch folgende Schritte aus:
 
 ## Installation
 
-### 1. Script herunterladen
+### 1. Script herunterladen und installieren
 
 ```bash
-cd /opt
-git clone https://github.com/AlexanderWagnerDev/proxmox-rtl-sdr-lxc-auto-fix.git
-cd proxmox-rtl-sdr-lxc-auto-fix
-chmod +x rtl-lxc-auto-fix.sh
+wget https://raw.githubusercontent.com/AlexanderWagnerDev/proxmox-rtl-sdr-lxc-auto-fix/main/rtl-lxc-auto-fix.sh -O /usr/local/bin/rtl_auto_fix.sh
+chmod +x /usr/local/bin/rtl_auto_fix.sh
 ```
 
 ### 2. Container-ID konfigurieren
@@ -195,7 +185,7 @@ chmod +x rtl-lxc-auto-fix.sh
 Script bearbeiten und eigene LXC Container-ID eintragen:
 
 ```bash
-nano rtl-lxc-auto-fix.sh
+nano /usr/local/bin/rtl_auto_fix.sh
 ```
 
 Zeile 6 ändern:
@@ -213,25 +203,19 @@ crontab -e
 
 Diese Zeile hinzufügen:
 ```bash
-*/5 * * * * /opt/proxmox-rtl-sdr-lxc-auto-fix/rtl-lxc-auto-fix.sh >> /var/log/rtl-lxc-auto-fix.log 2>&1
+*/5 * * * * /usr/local/bin/rtl_auto_fix.sh >> /var/log/rtl-lxc-auto-fix.log 2>&1
 ```
 
 Dies führt zu:
 - Ausführung des Scripts alle 5 Minuten
 - Logging in `/var/log/rtl-lxc-auto-fix.log`
 
-Alternative: Ausführung bei Boot und stündlich:
-```bash
-@reboot sleep 60 && /opt/proxmox-rtl-sdr-lxc-auto-fix/rtl-lxc-auto-fix.sh >> /var/log/rtl-lxc-auto-fix.log 2>&1
-0 * * * * /opt/proxmox-rtl-sdr-lxc-auto-fix/rtl-lxc-auto-fix.sh >> /var/log/rtl-lxc-auto-fix.log 2>&1
-```
-
 ### 4. Manuelle Ausführung
 
 Das Script kann auch manuell ausgeführt werden:
 
 ```bash
-/opt/proxmox-rtl-sdr-lxc-auto-fix/rtl-lxc-auto-fix.sh
+/usr/local/bin/rtl_auto_fix.sh
 ```
 
 ## Voraussetzungen
