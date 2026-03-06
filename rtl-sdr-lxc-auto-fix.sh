@@ -1,7 +1,7 @@
 #!/bin/bash
 # Auto RTL-SDR USB Passthrough Fixer for Proxmox LXC
 # Automatically detects RTL2838 USB path changes and updates LXC config
-# GitHub: YOUR_USERNAME/rtl-sdr-proxmox-auto-fix
+# GitHub: AlexanderWagnerDev/proxmox-rtl-sdr-lxc-auto-fix
 # License: MIT
 
 CTID=6056  # Change to your LXC container ID
