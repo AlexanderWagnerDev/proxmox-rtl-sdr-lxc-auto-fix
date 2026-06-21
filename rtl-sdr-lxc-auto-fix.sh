@@ -6,6 +6,9 @@
 
 CTID=6056  # Change to your LXC container ID
 
+# Wait for USB stack to be fully initialized after host boot
+sleep 15
+
 # Clean lsusb parse to get bus/device (e.g. "001/042")
 CURRENT_STICK=$(lsusb 2>/dev/null | grep "0bda:2838" | sed 's/.*Bus \([0-9]\+\) Device \([0-9]\+\):.*/\1\/\2/')
 
